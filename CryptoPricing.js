@@ -40,7 +40,7 @@ coinmarketcap.on("stellar", (coin) => {
 	})
 //clears console  console.log('\033[2J');
   console.log("\n ................................................\n",
-  "Stellar:", coin.price_usd, " BTC:", BTC, " Ripple:", RIP);
+  "Stellar:", STEL, " BTC:", BTC, " Ripple:", RIP);
   fs.writeFile('./Data.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
 
   })
