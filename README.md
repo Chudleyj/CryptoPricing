@@ -6,9 +6,9 @@ TO USE:
 Must have node.js installed
 
 Then run:
-$ npm install coinmarketcap-api
+$ npm install coinmarketcap
 # OR 
-$ yarn add coinmarketcap-api
+$ yarn add coinmarketcap
 
 Then, in terminal:
 node CryptoPricing.js
