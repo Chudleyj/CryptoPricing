@@ -35,7 +35,7 @@ $ pip install psycopg2 (if you are using postgres)
 
 Then, in terminal:
 
-python Graph.py
+$ python Graph.py
 
 NOTE: 
 
