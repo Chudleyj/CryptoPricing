@@ -27,6 +27,7 @@ Then run:
 $ pip install matplotlib
 
 #AND
+
 $ pip install psycopg2 (if you are using postgres)
 
 Then, in terminal:
