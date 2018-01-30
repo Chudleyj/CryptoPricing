@@ -8,6 +8,7 @@ TO USE:
 Must have node.js installed
 
 Then run:
+
 $ npm install coinmarketcap
 # OR 
 $ yarn add coinmarketcap
@@ -15,6 +16,7 @@ $ yarn add coinmarketcap
 npm install sequelize
 
 Then, in terminal:
+
 node CryptoPricing.js
 
 TO USE PYTHON PROGRAM:
@@ -26,11 +28,12 @@ Must have pip installed (Not technically MUST have pip, you could manually insta
 Then run:
 $ pip install matplotlib
 
-#AND
+# AND
 
 $ pip install psycopg2 (if you are using postgres)
 
 Then, in terminal:
+
 python Graph.py
 
 NOTE: 
