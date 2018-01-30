@@ -5,7 +5,8 @@ var Sequelize = require("sequelize"); //Sequelize API
 //Do the same for localhost.
 var connection = new Sequelize('database', 'justin_chudley', 'password', { //Connect to DB
   host: 'localhost',
-  dialect: 'postgres',
+  dialect: 'postgres', //IF NOT USING POSTGRES MUST CHANGE TO DATABSE YOU ARE USING
+  //note: If you choose to use another database besides postgres, the python code will need to be changed. I will not be supporting that.
   logging: false,
   operatorsAliases: false
 });
