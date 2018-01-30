@@ -1,17 +1,24 @@
 var CoinMarketCap = require ("node-coinmarketcap");
-var fs = require("fs");
+var Sequelize = require("sequelize");
+
+var connection = new Sequelize('database', 'justin_chudley', 'password', {
+  host: 'localhost',
+  dialect: 'postgres',
+  logging: false,
+  operatorsAliases: false
+});
+
+var Cryptos = connection.define('cryptos', {
+  Bitcoin: Sequelize.FLOAT,
+  Ripple: Sequelize.FLOAT,
+  Stellar: Sequelize.FLOAT
+});
 
 var options = {
   events: true,
   refresh: 1,
   convert: "USD"
 }
-
-var arrayOfObjects;
-
-fs.readFile('./Data.json', 'utf-8', function(err, data) {
-	arrayOfObjects = JSON.parse(data)
-})
 
 var coinmarketcap = new CoinMarketCap(options);
 var BTC;
@@ -20,30 +27,27 @@ var STEL;
 
 coinmarketcap.on("BTC", (coin) => {
   BTC = coin.price_usd;
-  arrayOfObjects.BitCoin.push({
-		price: BTC
-	})
 });
 
 coinmarketcap.on("ripple", (coin) => {
   RIP = coin.price_usd;
-  arrayOfObjects.Ripple.push({
-		price: RIP
-	})
 //  console.log(coin)
 });
 
 coinmarketcap.on("stellar", (coin) => {
   STEL = coin.price_usd;
-  arrayOfObjects.Stellar.push({
-		price: STEL
-	})
 //clears console  console.log('\033[2J');
   console.log("\n ................................................\n",
   "Stellar:", STEL, " BTC:", BTC, " Ripple:", RIP);
-  fs.writeFile('./Data.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
-
-  })
+  updateDB();
 });
 
-//STORING FORMAT FOR CLEARING JSON FILE HERE : {"BitCoin":[], "Ripple":[],"Stellar":[]}
+function updateDB(){
+  connection.sync().then(function (){
+    Cryptos.create({
+      Bitcoin: BTC,
+      Ripple: RIP,
+      Stellar: STEL
+    });
+  });
+}
