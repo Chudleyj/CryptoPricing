@@ -26,6 +26,7 @@ Must have python installed
 Must have pip installed (Not technically MUST have pip, you could manually install the libs needed, but not worth the time)
 
 Then run:
+
 $ pip install matplotlib
 
 # AND
@@ -37,4 +38,5 @@ Then, in terminal:
 python Graph.py
 
 NOTE: 
+
 With the latest version the JSON file posted earlier will NOT work anymore, this app has migrated to use postgres SQL so it can read and write to the data base at the same time allowing for self updating graphs. You will need to setup your own Postgres SQL database and point the node.js and python programs to the location of your database (Comments located in node.js and python code to show you where to do this.)
