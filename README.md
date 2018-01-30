@@ -25,6 +25,7 @@ Must have pip installed (Not technically MUST have pip, you could manually insta
 
 Then run:
 $ pip install matplotlib
+
 #AND
 $ pip install psycopg2 (if you are using postgres)
 
