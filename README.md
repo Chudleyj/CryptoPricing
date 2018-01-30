@@ -20,6 +20,7 @@ node CryptoPricing.js
 TO USE PYTHON PROGRAM:
 
 Must have python installed
+
 Must have pip installed (Not technically MUST have pip, you could manually install the libs needed, but not worth the time)
 
 Then run:
